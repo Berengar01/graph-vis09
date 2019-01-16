@@ -254,9 +254,9 @@ var app = (function() {
         // Schachtextur ist selbstgemacht da ich auf die schnelle keine mit der passenden Auflösung gemacht
         createModel("plane", fs, [ 1, 1, 1, 1 ], [ 0, -1, 0, 0 ], [ 0, 0, 0,
                 0 ], [ 1, 1, 1, 1 ], mGrey, "textures/chess.png");
-        //Auch diese Textur komplett selbst erstellt. Sollte ein wenig wie Saturn aussehen.
+        //Auch diese Textur komplett selbst erstellt.
         createModel("torus", fs, [ 1, 1, 1, 1 ], [ 0, .5, 0, 0 ], [ 0, 0, 0,
-            0 ], [ 1, 1, 1, 1 ], mGrey, "textures/saturn.png");
+            0 ], [ 1, 1, 1, 1 ], mGrey, "textures/redMarmor.png");
 
         // Select one model that can be manipulated interactively by user.
         interactiveModel = models[0];
