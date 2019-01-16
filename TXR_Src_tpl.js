@@ -196,9 +196,8 @@ var app = (function() {
 
         // Set texture parameter.
         // Min Filter: NEAREST,LINEAR, .. , LINEAR_MIPMAP_LINEAR,
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
-        // Mag Filter: NEAREST,LINEAR
-        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S , gl.MIRRORED_REPEAT);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T , gl.MIRRORED_REPEAT);
         // Use mip-Mapping.
         gl.generateMipmap(gl.TEXTURE_2D);
 
@@ -250,8 +249,14 @@ var app = (function() {
             kd : [ 1, 1, 1 ],
             ks : [ 0, 0, 0 ]
         });
-        createModel("plane", fs, [ 1, 1, 1, 1 ], [ 0, 0, 0, 0 ], [ 0, 0, 0,
-                0 ], [ 1, 1, 1, 1 ], mGrey, "textures/x.png");
+        
+        
+        // Schachtextur ist selbstgemacht da ich auf die schnelle keine mit der passenden Auflösung gemacht
+        createModel("plane", fs, [ 1, 1, 1, 1 ], [ 0, -1, 0, 0 ], [ 0, 0, 0,
+                0 ], [ 1, 1, 1, 1 ], mGrey, "textures/chess.png");
+        //Auch diese Textur komplett selbst erstellt. Sollte ein wenig wie Saturn aussehen.
+        createModel("torus", fs, [ 1, 1, 1, 1 ], [ 0, .5, 0, 0 ], [ 0, 0, 0,
+            0 ], [ 1, 1, 1, 1 ], mGrey, "textures/saturn.png");
 
         // Select one model that can be manipulated interactively by user.
         interactiveModel = models[0];
